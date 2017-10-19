@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>Sergej Derjabkin</authors>
+    <owners>SenDev GmbH</owners>
+    <licenseUrl>http://www.sendev.de</licenseUrl>
+    <projectUrl>http://www.sendev.de</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Script object controller</description>
+    <tags>XAF</tags>
+  </metadata>
+  <files>
+    <file src="**\*.cs" target="content\App_Packages\$id$.$version$" />
+    <file src="*.txt" />
+  </files>
+</package>
