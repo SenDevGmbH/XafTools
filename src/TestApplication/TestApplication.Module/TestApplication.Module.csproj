@@ -62,7 +62,7 @@
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Xpo.v17.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Printing.v17.1.Core">
       <SpecificVersion>False</SpecificVersion>
@@ -132,6 +132,7 @@
   <ItemGroup>
     <None Include="FunctionalTests\sample.ets" />
     <None Include="Images\ReadMe.txt" />
+    <None Include="packages.config" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

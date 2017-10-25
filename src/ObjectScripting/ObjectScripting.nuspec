@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>SenDev.XafTools.ObjectScripting</id>
     <version>$version$</version>
     <authors>Sergej Derjabkin</authors>
     <owners>SenDev GmbH</owners>
@@ -12,7 +12,6 @@
     <tags>XAF</tags>
   </metadata>
   <files>
-    <file src="**\*.cs" target="content\App_Packages\$id$.$version$" />
-    <file src="*.txt" />
+    <file src="**\*.cs" target="content\App_Packages\SenDev.XafTools.ObjectScripting" />
   </files>
 </package>
