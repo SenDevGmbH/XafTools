@@ -89,11 +89,11 @@
     </Reference>
     <Reference Include="DevExpress.Office.v17.1.Core">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.RichEdit.v17.1.Core">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Utils.v17.1">
       <SpecificVersion>False</SpecificVersion>
@@ -142,19 +142,19 @@
     </Reference>
     <Reference Include="DevExpress.XtraPrinting.v17.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraRichEdit.v17.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraTreeList.v17.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraVerticalGrid.v17.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

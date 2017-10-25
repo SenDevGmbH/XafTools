@@ -16,6 +16,8 @@ using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.ExpressApp.Xpo;
+using SenDev.XafTools.BusinessObjects;
+using SenDev.XafTools.Controllers;
 
 namespace TestApplication.Module {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppModuleBasetopic.aspx.
@@ -35,6 +37,17 @@ namespace TestApplication.Module {
         public override void CustomizeTypesInfo(ITypesInfo typesInfo) {
             base.CustomizeTypesInfo(typesInfo);
             CalculatedPersistentAliasHelper.CustomizeTypesInfo(typesInfo);
+        }
+
+        protected override IEnumerable<Type> GetDeclaredExportedTypes()
+        {
+            return base.GetDeclaredExportedTypes().Concat(new[] { typeof(ScriptingResult)});
+        }
+
+        protected override IEnumerable<Type> GetDeclaredControllerTypes()
+        {
+            return base.GetDeclaredControllerTypes().Concat(new[] { typeof(ScriptObjectController) });
+
         }
     }
 }

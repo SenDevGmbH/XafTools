@@ -67,7 +67,7 @@ namespace SenDev.XafTools.Controllers
                 result.Script = stringWriter.ToString();
             }
 
-            e.ShowViewParameters.CreatedView = Application.CreateDetailView(ObjectSpace, result);
+            e.ShowViewParameters.CreatedView = Application.CreateDetailView(Application.CreateObjectSpace(result.GetType()), result);
         }
 
         private static string AddObjectInstance(CodeMemberMethod method, object instance, InstanceManager instanceManager)

@@ -175,6 +175,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ObjectScripting\ObjectScripting.csproj">
+      <Project>{098f1159-5992-4906-aa8e-8b7e5dc69637}</Project>
+      <Name>ObjectScripting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestApplication.Module\TestApplication.Module.csproj">
       <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
       <Name>TestApplication.Module</Name>
