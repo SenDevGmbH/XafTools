@@ -17,17 +17,17 @@ namespace SenDev.XafTools.Controllers
 {
     public class ScriptObjectController : ViewController
     {
-        private readonly SimpleAction scriptObjectAction;
+
 
         public ScriptObjectController()
         {
-            scriptObjectAction = new SimpleAction(this, "ScriptObjectAction", PredefinedCategory.Tools);
-            scriptObjectAction.Caption = "Generate Script";
-            scriptObjectAction.Execute += scriptObjectAction_Execute;
-            scriptObjectAction.SelectionDependencyType = SelectionDependencyType.RequireSingleObject;
-
-            RegisterActions(scriptObjectAction);
+            ScriptObjectAction = new SimpleAction(this, "ScriptObjectAction", PredefinedCategory.Tools);
+            ScriptObjectAction.Caption = "Generate Script";
+            ScriptObjectAction.Execute += scriptObjectAction_Execute;
+            ScriptObjectAction.SelectionDependencyType = SelectionDependencyType.RequireMultipleObjects;
         }
+
+        public SimpleAction ScriptObjectAction { get; }
 
         void scriptObjectAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
@@ -42,18 +42,26 @@ namespace SenDev.XafTools.Controllers
             method.Name = "CreateObject";
 
             typeDeclaration.Members.Add(method);
+            method.Parameters.Add(new CodeParameterDeclarationExpression(new CodeTypeReference(typeof(Session)), "session"));
 
-            var rootObject = View.SelectedObjects.OfType<object>().Single();
-            var rootObjectType = rootObject.GetType();
 
-            method.Parameters.Add(new CodeParameterDeclarationExpression(
-                new CodeTypeReference(typeof(Session)), "session"));
-            method.ReturnType = new CodeTypeReference(rootObjectType.Name);
-            ns.Imports.Add(new CodeNamespaceImport(rootObjectType.Namespace));
+            var selectedObjects = View.SelectedObjects.Cast<object>().ToList();
+            ns.Imports.AddRange(selectedObjects.Select(obj => obj.GetType().Name).Distinct().Select(n => new CodeNamespaceImport(n)).ToArray());
 
-            string resultName = AddObjectInstance(method, rootObject, new InstanceManager());
+            var instanceManager = new InstanceManager();
+            if (selectedObjects.Count == 1)
+            {
+                var rootObject = selectedObjects[0];
+                var rootObjectType = rootObject.GetType();
 
-            method.Statements.Add(new CodeMethodReturnStatement(new CodeVariableReferenceExpression(resultName)));
+                method.ReturnType = new CodeTypeReference(rootObjectType.Name);
+                string resultName = AddObjectInstance(method, rootObject, instanceManager);
+                method.Statements.Add(new CodeMethodReturnStatement(new CodeVariableReferenceExpression(resultName)));
+            }
+            else
+            {
+                selectedObjects.ForEach(obj=> AddObjectInstance(method, obj, instanceManager));
+            }
             CSharpCodeProvider codeProvider = new CSharpCodeProvider();
             var result = new ScriptingResult();
             using (var stringWriter = new StringWriter())
@@ -83,7 +91,7 @@ namespace SenDev.XafTools.Controllers
 
             method.Statements.Add(objectVariable);
             var ti = XafTypesInfo.Instance.FindTypeInfo(type);
-            foreach (var member in ti.Members.Where(m => ((m.MemberType.IsEnum || m.MemberType.IsValueType || m.MemberType == typeof(string) || 
+            foreach (var member in ti.Members.Where(m => ((m.MemberType.IsEnum || m.MemberType.IsValueType || m.MemberType == typeof(string) ||
                 m.MemberType == typeof(Type))
                 && m.IsPersistent && m.IsPublic && !m.IsReadOnly)))
             {
@@ -127,7 +135,7 @@ namespace SenDev.XafTools.Controllers
             {
                 var list = member.GetValue(instance) as XPBaseCollection;
 
-                if (list != null && list.IsLoaded && list.Count > 0)
+                if (list != null && list.Count > 0)
                 {
                     foreach (object value in list)
                     {

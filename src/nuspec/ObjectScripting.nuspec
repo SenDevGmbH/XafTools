@@ -12,6 +12,7 @@
     <tags>XAF</tags>
   </metadata>
   <files>
-    <file src="**\*.cs" target="content\App_Packages\SenDev.XafTools.ObjectScripting" />
+    <file src="ObjectScripting\BusinessObjects\*.cs" target="content\App_Packages\SenDev.XafTools.ObjectScripting" />
+	<file src="ObjectScripting\Controllers\*.cs" target="content\App_Packages\SenDev.XafTools.ObjectScripting" />
   </files>
 </package>

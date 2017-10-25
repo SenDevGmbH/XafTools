@@ -8,7 +8,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectToBuild Include="XafTools.sln"/>
-    <NugetFile Include="**\*.nuspec"/>
+    <NugetFile Include="nuspec\*.nuspec"/>
   </ItemGroup>
 
   <Target Name="IncreaseVersion">
