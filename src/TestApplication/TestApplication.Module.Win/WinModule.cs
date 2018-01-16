@@ -48,7 +48,7 @@ namespace TestApplication.Module.Win
 
         protected override IEnumerable<Type> GetDeclaredControllerTypes()
         {
-            return base.GetDeclaredControllerTypes().Concat(new[] { typeof(SenDev.XafTools.Win.Controllers.ImmediateDateActionExecuteController) });
+            return base.GetDeclaredControllerTypes().Concat(new[] { typeof(SenDev.XafTools.Win.Controllers.WinImmediateDateActionExecuteController) });
 
         }
     }

@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.Web", "Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.Win", "TestApplication\TestApplication.Win\TestApplication.Win.csproj", "{D05D93DF-312D-4D4E-B980-726871EC7833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParametrizedActions", "ParametrizedActions\ParametrizedActions.csproj", "{9B9735EC-1452-4220-8943-1C62B987BD93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win", "Win\Win.csproj", "{9B9735EC-1452-4220-8943-1C62B987BD93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
