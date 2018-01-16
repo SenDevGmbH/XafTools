@@ -14,5 +14,6 @@
   <files>
     <file src="ObjectScripting\BusinessObjects\*.cs" target="content\App_Packages\SenDev.XafTools.ObjectScripting" />
 	<file src="ObjectScripting\Controllers\*.cs" target="content\App_Packages\SenDev.XafTools.ObjectScripting" />
+	<file src="ObjectScripting\Attributes\*.cs" target="content\App_Packages\SenDev.XafTools.ObjectScripting" />
   </files>
 </package>

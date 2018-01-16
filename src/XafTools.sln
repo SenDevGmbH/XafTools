@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectScripting", "ObjectScripting\ObjectScripting.csproj", "{098F1159-5992-4906-AA8E-8B7E5DC69637}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.Web", "TestApplication\TestApplication.Web\TestApplication.Web.csproj", "{82A6DBC9-B1B4-44E4-9718-55DF930CD349}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.Win", "TestApplication\TestApplication.Win\TestApplication.Win.csproj", "{D05D93DF-312D-4D4E-B980-726871EC7833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParametrizedActions", "ParametrizedActions\ParametrizedActions.csproj", "{9B9735EC-1452-4220-8943-1C62B987BD93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,12 @@ Global
 		{D05D93DF-312D-4D4E-B980-726871EC7833}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{D05D93DF-312D-4D4E-B980-726871EC7833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D05D93DF-312D-4D4E-B980-726871EC7833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9735EC-1452-4220-8943-1C62B987BD93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9735EC-1452-4220-8943-1C62B987BD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9735EC-1452-4220-8943-1C62B987BD93}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9735EC-1452-4220-8943-1C62B987BD93}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{9B9735EC-1452-4220-8943-1C62B987BD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9735EC-1452-4220-8943-1C62B987BD93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +81,7 @@ Global
 		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97} = {EBD8000C-BAE3-43D5-B515-5FA3C62AE477}
 		{82A6DBC9-B1B4-44E4-9718-55DF930CD349} = {EBD8000C-BAE3-43D5-B515-5FA3C62AE477}
 		{D05D93DF-312D-4D4E-B980-726871EC7833} = {EBD8000C-BAE3-43D5-B515-5FA3C62AE477}
+		{9B9735EC-1452-4220-8943-1C62B987BD93} = {D224BA3C-8F18-4D1B-A21C-7DF98CC90FF1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BA38688-4C15-4639-8695-FC8C5051F855}

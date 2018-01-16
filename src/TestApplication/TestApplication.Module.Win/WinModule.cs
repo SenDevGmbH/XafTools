@@ -46,6 +46,10 @@ namespace TestApplication.Module.Win
             // Manage various aspects of the application UI and behavior at the module level.
         }
 
-      
+        protected override IEnumerable<Type> GetDeclaredControllerTypes()
+        {
+            return base.GetDeclaredControllerTypes().Concat(new[] { typeof(SenDev.XafTools.Win.Controllers.ImmediateDateActionExecuteController) });
+
+        }
     }
 }

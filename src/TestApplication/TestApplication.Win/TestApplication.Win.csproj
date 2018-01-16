@@ -10,7 +10,7 @@
     <RootNamespace>TestApplication.Win</RootNamespace>
     <AssemblyName>TestApplication.Win</AssemblyName>
     <ApplicationIcon>ExpressApp.ico</ApplicationIcon>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -224,6 +224,10 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ParametrizedActions\ParametrizedActions.csproj">
+      <Project>{9b9735ec-1452-4220-8943-1c62b987bd93}</Project>
+      <Name>ParametrizedActions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestApplication.Module.Win\TestApplication.Module.Win.csproj">
       <Project>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</Project>
       <Name>TestApplication.Module.Win</Name>

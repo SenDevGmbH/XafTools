@@ -13,7 +13,6 @@ using System.Linq;
 using System.Text;
 using SenDev.XafTools.BusinessObjects;
 using SenDev.XafTools.Attributes;
-using System.ComponentModel;
 
 namespace SenDev.XafTools.Controllers
 {
@@ -93,11 +92,10 @@ namespace SenDev.XafTools.Controllers
 
             method.Statements.Add(objectVariable);
             var ti = XafTypesInfo.Instance.FindTypeInfo(type);
-            foreach (var member in ti.Members.Where(m => ((m.MemberType.IsEnum || m.MemberType.IsValueType || m.MemberType == typeof(string) ||
-                m.MemberType == typeof(Type)) && IsScriptable(m))))
+            foreach (var member in ti.Members.Where(m => IsScriptable(m)))
             {
                 object value = member.GetValue(instance);
-                if (value != null && !IsDefaultValue(member, value))
+                if (value != null)
                 {
                     if ((member.MemberType.IsEnum || IsPrimitive(value)))
                     {
@@ -107,27 +105,19 @@ namespace SenDev.XafTools.Controllers
                             ));
                     }
 
-
-                    switch (value)
+                    if (member.MemberType == typeof(Type))
                     {
-                        case Type typeValue:
                         method.Statements.Add(new CodeAssignStatement(
                             new CodePropertyReferenceExpression(new CodeVariableReferenceExpression(variableName), member.Name),
-                                new CodeTypeOfExpression(new CodeTypeReference(typeValue))
+                            new CodeTypeOfExpression(new CodeTypeReference((Type)value))
                             ));
-                            break;
-                        case DateTime dateTime:
-                            method.Statements.Add(new CodeAssignStatement(
-                                new CodePropertyReferenceExpression(new CodeVariableReferenceExpression(variableName), member.Name),
-                                new CodeObjectCreateExpression(typeof(DateTime), new CodePrimitiveExpression(dateTime.Ticks))));
-                            break;
-                    }
 
+                    }
                 }
 
             }
 
-            foreach (var member in ti.Members.Where(m => m.MemberTypeInfo.IsPersistent && IsScriptable(m) && !m.IsReferenceToOwner))
+            foreach (var member in ti.Members.Where(m => IsScriptable(m) && !m.IsReferenceToOwner))
             {
                 object value = member.GetValue(instance);
 
@@ -160,16 +150,11 @@ namespace SenDev.XafTools.Controllers
             return variableName;
         }
 
-        private static bool IsDefaultValue(IMemberInfo member, object value)
-        {
-            var defaultValueAttribute = member.FindAttribute<DefaultValueAttribute>();
-            if (defaultValueAttribute == null) return false;
-            return Equals(defaultValueAttribute.Value, value);
-        }
-
         private static bool IsScriptable(IMemberInfo m)
         {
-            return m.IsPersistent && m.IsPublic && !m.IsReadOnly && m.FindAttribute<IgnoreInScriptingAttribute>() == null;
+            return (m.MemberType.IsEnum || m.MemberType.IsValueType || m.MemberType == typeof(string) ||
+                            m.MemberType == typeof(Type))
+                            && m.IsPersistent && m.IsPublic && !m.IsReadOnly && m.FindAttribute<IgnoreInScriptingAttribute>() == null;
         }
 
         private static bool IsPrimitive(object value)

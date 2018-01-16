@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestApplication.Module.Win</RootNamespace>
     <AssemblyName>TestApplication.Module.Win</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -178,6 +178,10 @@
     <ProjectReference Include="..\..\ObjectScripting\ObjectScripting.csproj">
       <Project>{098f1159-5992-4906-aa8e-8b7e5dc69637}</Project>
       <Name>ObjectScripting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ParametrizedActions\ParametrizedActions.csproj">
+      <Project>{9b9735ec-1452-4220-8943-1c62b987bd93}</Project>
+      <Name>ParametrizedActions</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestApplication.Module\TestApplication.Module.csproj">
       <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>

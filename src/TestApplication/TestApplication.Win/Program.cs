@@ -5,8 +5,10 @@ using System.Windows.Forms;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Win;
+using DevExpress.ExpressApp.Win.Templates.ActionContainers.Items;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.XtraEditors;
 
 namespace TestApplication.Win {
     static class Program {
