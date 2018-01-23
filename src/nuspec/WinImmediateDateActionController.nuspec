@@ -5,8 +5,8 @@
     <version>$version$</version>
     <authors>Sergej Derjabkin</authors>
     <owners>SenDev GmbH</owners>
-    <licenseUrl>http://www.sendev.de</licenseUrl>
-    <projectUrl>http://www.sendev.de</projectUrl>
+    <licenseUrl>https://github.com/SenDevGmbH/XafTools/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/SenDevGmbH/XafTools</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Immediate Date Action Execute Controller</description>
     <tags>DevExpress XAF</tags>

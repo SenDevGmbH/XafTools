@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Attributes\IgnoreInScriptingAttribute.cs" />
     <Compile Include="BusinessObjects\ScriptingResult.cs" />
+    <Compile Include="Controllers\ObjectScriptGenerator.cs" />
     <Compile Include="Controllers\ScriptObjectController.cs">
       <SubType>Component</SubType>
     </Compile>

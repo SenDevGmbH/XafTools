@@ -15,9 +15,9 @@
 	<ChangeVersion Files="CommonVersion.cs" Version="$(VersionPattern)">
       <Output TaskParameter="NewVersion" PropertyName="Version"/>
     </ChangeVersion>
-	<MSBuild Projects="@(ProjectToBuild)"
+	<!--<MSBuild Projects="@(ProjectToBuild)"
                  Properties="OutDir=$(OutputPath);ReferencePath=$(ReferencePath)"
-                 StopOnFirstFailure="true" ToolsVersion="$(ToolsVersion)"  Targets="Clean;Rebuild"/>
+                 StopOnFirstFailure="true" ToolsVersion="$(ToolsVersion)"  Targets="Clean;Rebuild"/>-->
 	
   </Target>
   <Target Name="NuGet" DependsOnTargets="IncreaseVersion" Inputs="@(NugetFile)" Outputs="EmptyOutput">
