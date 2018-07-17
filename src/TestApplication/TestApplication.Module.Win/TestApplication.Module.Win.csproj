@@ -175,9 +175,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ObjectScripting\ObjectScripting.csproj">
+    <ProjectReference Include="..\..\ObjectScripting\PlatformAgnostic.csproj">
       <Project>{098f1159-5992-4906-aa8e-8b7e5dc69637}</Project>
-      <Name>ObjectScripting</Name>
+      <Name>PlatformAgnostic</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Win\Win.csproj">
       <Project>{9b9735ec-1452-4220-8943-1c62b987bd93}</Project>

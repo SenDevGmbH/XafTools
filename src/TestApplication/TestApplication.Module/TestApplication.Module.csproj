@@ -147,9 +147,9 @@
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ObjectScripting\ObjectScripting.csproj">
+    <ProjectReference Include="..\..\ObjectScripting\PlatformAgnostic.csproj">
       <Project>{098F1159-5992-4906-AA8E-8B7E5DC69637}</Project>
-      <Name>ObjectScripting</Name>
+      <Name>PlatformAgnostic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

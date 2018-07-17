@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectScripting", "ObjectScripting\ObjectScripting.csproj", "{098F1159-5992-4906-AA8E-8B7E5DC69637}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformAgnostic", "ObjectScripting\PlatformAgnostic.csproj", "{098F1159-5992-4906-AA8E-8B7E5DC69637}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.Module", "TestApplication\TestApplication.Module\TestApplication.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
 EndProject
