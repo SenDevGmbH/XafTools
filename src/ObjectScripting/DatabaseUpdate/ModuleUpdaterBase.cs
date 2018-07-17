@@ -24,7 +24,7 @@ namespace SenDev.XafTools.DatabaseUpdate
             var executedMethods = ObjectSpace.GetObjects<OneTimeMethodExecuteInfo>();
 
             var methods = GetType().GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-                .Where(m => m.GetCustomAttribute<OneTimeMethodAttribute>() != null && !executedMethods.Any(em => em.MethodName == m.Name))
+                .Where(m => m.GetCustomAttributes(typeof(OneTimeMethodAttribute), false).Any() && !executedMethods.Any(em => em.MethodName == m.Name))
                 .ToArray();
 
             foreach (var method in methods)
